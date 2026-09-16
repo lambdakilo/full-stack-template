@@ -17,7 +17,7 @@ import { iconSpritesheet } from './plugins/icon-spritesheet-plugin.js';
 const ANALYZE = !!process.env.ANALYZE;
 const OUT_DIR = path.resolve(
   import.meta.dirname,
-  ANALYZE ? 'build' : '../../build'
+  process.env.BUILD_OUT_DIR || 'build'
 );
 const DEV_HOST = process.env.DEV_BINDADDR || '127.0.0.1';
 const DEV_PORT = Number(process.env.DEV_PORT ?? 3000);
